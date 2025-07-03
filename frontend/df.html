@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Map</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background-color: #f0f2f5;
+    }
+
+    .main-container {
+        display: flex;
+        height: 100vh;
+    }
+
+    .side-panel {
+        width: 33.33%;
+        background-color: #ffffff;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        box-sizing: border-box;
+        z-index: 10;
+    }
+
+    .search-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .search-input {
+        flex-grow: 1;
+        padding: 12px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+
+    .filter-button {
+        padding: 10px;
+        font-size: 24px;
+        cursor: pointer;
+        border: none;
+        background: none;
+        color: #555;
+    }
+
+    .filter-button:hover {
+        color: #000;
+    }
+
+    .panel-content h3 {
+        margin-top: 0;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+    }
+
+    #places-list .place-item {
+        padding: 15px 5px;
+        border-bottom: 1px solid #eee;
+        cursor: pointer;
+    }
+
+    #places-list .place-item:hover {
+        background-color: #f9f9f9;
+    }
+
+    #places-list .place-item h4 {
+        margin: 0 0 5px 0;
+    }
+
+    #places-list .place-item p {
+        margin: 0;
+        font-size: 14px;
+        color: #666;
+    }
+    
+    #filter-options .filter-option {
+        padding: 15px 5px;
+        font-size: 16px;
+        cursor: pointer;
+        border-bottom: 1px solid #eee;
+    }
+
+    #filter-options .filter-option:hover {
+        background-color: #f9f9f9;
+    }
+
+    #filter-options .back-button {
+        margin-top: 20px;
+        padding: 12px;
+        width: 100%;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    #filter-options .back-button:hover {
+        background-color: #0056b3;
+    }
+
+
+    .map-area {
+        width: 66.67%;
+        background-color: #e5e3df; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: #aaa;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+</style>
+</head>
+<body>
+
+<div class="main-container">
+
+    <div class="side-panel">
+        
+        <div class="search-header">
+            <input type="text" class="search-input" placeholder="Search">
+            <button id="filter-btn" class="filter-button material-icons" title="Filter">filter_list</button>
+        </div>
+
+        <div class="panel-content">
+            
+            <div id="places-list">
+                <h3>Nearby Places</h3>
+                <div class="place-item">
+                    <h4>1. The woods</h4>
+                    <p>20km  </p>
+                    <p> .. .. ... .. .... .</p>
+                </div>
+                <div class="place-item">
+                    <h4>2. chet </h4>
+                    <p>40 km,.</p>
+                    <p> .. </p>
+
+                </div>
+                <div class="place-item">
+                    <h4>3. chgai </h4>
+
+                    <p>40 km,.</p>
+                    <p> .. </p>
+                </div>
+                <div class="place-item">
+                    <h4>4. The vibe </h4>
+
+                    <p>40 km,.</p>
+                    <p> .. </p>
+                </div>
+                <div class="place-item">
+
+                    <h4>5. lol</h4>
+
+                    <p>40 km,.</p>
+                    <p> .. </p>
+                </div>
+            </div>
+
+            <div id="filter-options" class="hidden">
+                <h3>Filter By</h3>
+                <div class="filter-option">Price</div>
+                <div class="filter-option">Dining Experience</div>
+                <div class="filter-option">Taste</div>
+                <button id="back-to-list-btn" class="back-button">Apply & Go Back</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="map-area">
+        <span>Map Area</span>
+    </div>
+
+</div>
+
+<script>
+    const filterButton = document.getElementById('filter-btn');
+    const backButton = document.getElementById('back-to-list-btn');
+    const placesListView = document.getElementById('places-list');
+    const filterOptionsView = document.getElementById('filter-options');
+
+    function showFilters() {
+        placesListView.classList.add('hidden');
+        filterOptionsView.classList.remove('hidden');
+    }
+
+    function showPlaces() {
+        filterOptionsView.classList.add('hidden');
+        placesListView.classList.remove('hidden');
+    }
+
+    filterButton.addEventListener('click', showFilters);
+    backButton.addEventListener('click', showPlaces);
+
+</script>
+
+</body>
+</html>
