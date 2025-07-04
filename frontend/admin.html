@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Login Form</title>
+    <style>
+        /* Basic styles for the whole page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5; /* A light grey background */
+            display: flex; /* Use flexbox to center the content */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Make the body take up the full viewport height */
+            margin: 0; /* Remove default body margin */
+        }
+
+        /* The container for the login form */
+        .login-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* A subtle shadow */
+            width: 300px;
+            text-align: center; /* Center the text inside */
+        }
+
+        /* The main title of the form */
+        h2 {
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        /* Styling for the input fields and their container */
+        .input-group {
+            margin-bottom: 1rem;
+            text-align: left; /* Align labels to the left */
+        }
+
+        .input-group label {
+            display: block; /* Make the label take its own line */
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .input-group input {
+            width: 100%; /* Make the input take the full width */
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box; /* Important for padding and width to work together */
+        }
+
+        /* Styling for the login button */
+        .login-button {
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff; /* A nice blue color */
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer; /* Show a pointer hand on hover */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        /* Change button color when you hover over it */
+        .login-button:hover {
+            background-color: #0056b3; /* A darker blue */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="#" method="POST">
+            <!-- Email Input Group -->
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <!-- Password Input Group -->
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <!-- Submit Button -->
+            <button type="submit" class="login-button">Sign In</button>
+        </form>
+    </div>
+
+</body>
+</html>

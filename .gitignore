@@ -1,0 +1,32 @@
+# --- General ---
+# Ignore operating system files
+.DS_Store
+Thumbs.db
+
+# --- Python ---
+# Ignore Python bytecode and cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environment folders
+# If your environment is named something else, add it here.
+venv/
+env/
+.venv/
+
+# --- Secrets & Configuration ---
+# CRITICAL: Ignore environment files containing secrets like passwords and API keys.
+.env
+
+# --- IDE & Editor Folders ---
+# Ignore configuration folders from popular code editors.
+.vscode/
+.idea/
+
+# --- Installation & Build ---
+# Ignore package distribution and build artifacts
+dist/
+build/
+*.egg-info/
